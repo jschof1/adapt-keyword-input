@@ -1,0 +1,64 @@
+<div class="thoughts-popup__inner u-clearfix">
+
+{{#if _showUserAnswer}}
+
+  {{#if _feedback.title}}
+  <div id="notify-heading" class="notify__title"{{a11y_attrs_heading 'notify'}}>
+    <div class="notify__title-inner">
+      {{{compile _feedback.title}}}
+    </div>
+  </div>
+  {{/if}}
+
+  {{#if _feedback.userTitle}}
+  <div class="thoughts-popup__user-title">
+    {{{compile _feedback.userTitle}}}
+  </div>
+  {{/if}}
+
+  <div class="thoughts-popup__user-answer">
+    {{{compile userAnswer}}}
+  </div>
+
+  {{#if _feedback.answerTitle}}
+  <div class="thoughts-popup__feedback-title">
+    {{{compile _feedback.answerTitle}}}
+  </div>
+  {{/if}}
+
+  {{#if _feedback.body}}
+  <div class="thoughts-popup__body">
+    <div class="thoughts-popup__body-inner">
+      {{{compile _feedback.body}}}
+    </div>
+  </div>
+  {{/if}}
+
+{{else}}
+
+  {{#if _feedback.answerTitle}}
+  <div id="notify-heading" class="notify__title" {{a11y_attrs_heading 'notify'}}>
+    <div class="notify__title-inner">
+      {{{compile _feedback.answerTitle}}}
+    </div>
+  </div>
+  {{/if}}
+
+  {{#if _feedback.body}}
+  <div class="thoughts-popup__body">
+    <div class="thoughts-popup__body-inner">
+      {{{compile _feedback.body}}}
+    </div>
+  </div>
+  {{/if}}
+
+{{/if}}
+</div>
+
+<div class="notify__btn-container">
+  <button class="btn-text notify__btn js-thoughts-close-button" aria-label="{{#if _buttons._closeFeedback.ariaLabel}}{{_buttons._closeFeedback.ariaLabel}}{{else}}{{_globals._accessibility._ariaLabels.closePopup}}{{/if}}">
+    {{#if _buttons._closeFeedback.buttonText}}{{{_buttons._closeFeedback.buttonText}}}{{else}}{{{_globals._accessibility._ariaLabels.closePopup}}}{{/if}}
+  </button>
+</div>
+
+{{a11y_wrap_focus}}

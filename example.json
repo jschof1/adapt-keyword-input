@@ -1,0 +1,51 @@
+{
+  "_id": "c-05",
+  "_parentId": "b-05",
+  "_type": "component",
+  "_component": "thoughts",
+  "_classes": "",
+  "_layout": "full",
+  "_recordInteraction": true,
+  "_canShowFeedback": true,
+  "_showUserAnswer": true,
+  "_setCompletionOn": "submitted",
+  "title": "Thoughts",
+  "displayTitle": "Thoughts",
+  "body": "",
+  "instruction": "",
+  "placeholder": "Enter your thoughts here",
+  "_characterLimit": {
+    "_isEnabled": true,
+    "_max": 255,
+    "text": "Characters remaining:"
+  },
+  "_buttons": {
+    "_submit": {
+      "buttonText": "Submit",
+      "ariaLabel": "Select here to submit your answer."
+    },
+    "_showFeedback": {
+      "buttonText": "Show feedback",
+      "ariaLabel": "Select here to see the answer."
+    },
+    "_closeFeedback": {
+      "buttonText": "Close feedback",
+      "ariaLabel": "Select here to close the answer."
+    }
+  },
+  "_feedback": {
+    "title": "Title",
+    "answerTitle": "Answer title",
+    "userTitle": "User title",
+    "body": "Feedback text.",
+    "_audio": {
+      "src": ""
+    }
+  }
+}
+
+// Accessibility supported courses require ARIA instruction - apply to _globals in course.json
+
+"_thoughts": {
+    "ariaRegion": "This question requires you to input your answer in the textbox provided. When you have done so, select the submit button below."
+}

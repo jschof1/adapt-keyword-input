@@ -1,0 +1,16 @@
+{
+  "name": "adapt-thoughts",
+  "version": "1.0.0",
+  "framework": ">=5.20.1",
+  "homepage": "https://github.com/RobertPeek/adapt-thoughts",
+  "issues": "https://github.com/RobertPeek/adapt-thoughts/issues",
+  "description": "A text entry component to capture user text",
+  "main": "/js/adapt-thoughts.js",
+  "displayName" : "Thoughts",
+  "component" : "thoughts",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPL-3.0"
+}

@@ -1,0 +1,264 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "This question requires you to input your answer in the textbox provided. When you have done so, select the submit button below.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties":{
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+  	"instruction": {
+  		"type": "string",
+  		"required": false,
+  		"default": "",
+  		"inputType": "Text",
+  		"validators": [],
+  		"help": "This is the instruction text",
+      "translatable": true
+		},
+    "_recordInteraction": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Record interaction",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "If disabled, recording the user's answer(s) to this question to cmi.interactions on the LMS will be disabled for this component only."
+    },
+    "_canShowFeedback": {
+      "type": "boolean",
+      "required": true,
+      "default": true,
+      "title": "Display Feedback",
+      "inputType": "Checkbox",
+      "validators": []
+    },
+    "_showUserAnswer": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Show User Answer",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Controls whether the user can view their answer with the correct answer."
+    },
+    "_setCompletionOn": {
+      "type": "string",
+      "required": false,
+      "default": "submitted",
+      "title": "Set completion on:",
+      "enum": ["submitted", "inview"],
+      "inputType": {
+        "type": "Select",
+        "options": ["submitted", "inview"]
+      },
+      "validators": [],
+      "help": "Whether completion is based on the learner having viewed all the accordion items - or just having viewed the component"
+    },
+    "placeholder": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Placeholder Text",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "_characterLimit": {
+      "type": "object",
+      "title": "Character Limit",
+      "required": false,
+      "properties": {
+        "_isEnabled": {
+          "type": "boolean",
+          "required": false,
+          "default": false,
+          "title": "Is Enabled",
+          "inputType": "Checkbox",
+          "validators": [],
+          "help": "Controls whether there is a character limit."
+        },
+        "_max": {
+          "type": "number",
+          "required": false,
+          "title": "Max Number",
+          "inputType": "Number",
+          "default": 255,
+          "validators": ["number"],
+          "help": "This sets the maximum character limit. If 'Record interaction' is enabled the maximum should be 255 to be SCORM 1.2 compliant."
+        },
+        "text": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Prefix Text",
+          "inputType": "Text",
+          "validators": [],
+          "translatable": true
+        }
+      }
+    },
+    "_buttons": {
+      "type":"object",
+      "title": "Buttons",
+      "required": false,
+      "properties":{
+        "_submit": {
+          "type": "object",
+          "title": "Submit",
+          "properties": {
+            "buttonText": {
+              "type": "string",
+              "required": true,
+              "default": "Submit",
+              "title": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "help": "Button label text for the submit button.",
+              "translatable": true
+            },
+            "ariaLabel": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "title": "",
+              "inputType": "Text",
+              "validators": [],
+              "help": "Aria label for the submit button.",
+              "translatable": true
+            }
+          }
+        },
+        "_showFeedback": {
+          "type": "object",
+          "title": "Show Feedback",
+          "properties": {
+            "buttonText": {
+              "type": "string",
+              "required": true,
+              "default": "Show feedback",
+              "title": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "help": "Button label text to show feedback.",
+              "translatable": true
+            },
+            "ariaLabel": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "title": "",
+              "inputType": "Text",
+              "validators": [],
+              "help": "Aria label for the show feedback button.",
+              "translatable": true
+            }
+          }
+        },
+        "_closeFeedback": {
+          "type": "object",
+          "title": "Close Feedback",
+          "properties": {
+            "buttonText": {
+              "type": "string",
+              "required": true,
+              "default": "Close",
+              "title": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "help": "Button label text to close feedback.",
+              "translatable": true
+            },
+            "ariaLabel": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "title": "",
+              "inputType": "Text",
+              "validators": [],
+              "help": "Aria label for the close feedback button.",
+              "translatable": true
+            }
+          }
+        }
+      }
+    },
+    "_feedback": {
+      "type": "object",
+      "required": true,
+      "title": "Feedback",
+      "properties": {
+        "title": {
+          "type": "string",
+          "required": false,
+          "default": "Feedback",
+          "title": "Feedback Title",
+          "inputType": "Text",
+          "validators": [],
+          "help": "This is the title for the entire feedback popup.",
+          "translatable": true
+        },
+        "answerTitle": {
+          "type": "string",
+          "required": false,
+          "default": "Answer",
+          "title": "Answer Title",
+          "inputType": "Text",
+          "validators": [],
+          "help": "This is the title for the answer text.",
+          "translatable": true
+        },
+        "userTitle": {
+          "type": "string",
+          "required": false,
+          "default": "Your Answer",
+          "title": "User Answer Title",
+          "inputType": "Text",
+          "validators": [],
+          "help": "This is the title for the learners answer.",
+          "translatable": true
+        },
+        "body": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Feedback Body Text",
+          "inputType": "TextArea",
+          "validators": [],
+          "help": "This is the correct answer text.",
+          "translatable": true
+        },
+        "_audio": {
+          "type": "object",
+          "required": false,
+          "properties": {
+            "src": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "title": "Audio",
+              "inputType": "Asset:audio",
+              "validators": [],
+              "audioSources": ["_feedback/body"],
+              "audioConditions": []
+            }
+          }
+        }
+      }
+    }
+  }
+}

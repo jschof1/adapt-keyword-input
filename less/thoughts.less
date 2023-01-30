@@ -1,0 +1,71 @@
+.thoughts {
+
+  &__input {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 0 @item-padding 0;
+  }
+
+  &__input-textbox {
+    display: block;
+    box-sizing: border-box;
+    resize: none;
+    width: 100%;
+    padding: @item-padding;
+    border: 1px solid @item-color;
+    margin: 0;
+
+    &.is-disabled {
+      border: 1px solid @disabled;
+    }
+  }
+
+  &__counter {
+    color: @item-color-inverted;
+    background-color: @item-color;
+    padding: @notify-body-margin;
+    font-weight: @font-weight-regular;
+  }
+}
+
+.thoughts-popup {
+
+  &__user-title {
+    margin-bottom: @notify-title-margin;
+    text-align: left;
+    font-weight: @font-weight-bold;
+    .dir-rtl & {
+      text-align: right;
+    }
+  }
+
+  &__user-answer {
+    margin-bottom: @notify-body-margin;
+    text-align: left;
+    .dir-rtl & {
+      text-align: right;
+    }
+  }
+
+  &__feedback-title {
+    margin-bottom: @notify-title-margin;
+    text-align: left;
+    font-weight: @font-weight-bold;
+    .dir-rtl & {
+      text-align: right;
+    }
+  }
+
+  &__body {
+    padding-bottom: @notify-body-margin;
+    font-size: @body-size;
+    float: left;
+    text-align: left;
+    .dir-rtl & {
+      float: right;
+      text-align: right;
+    }
+    width: 100%;
+    overflow: hidden;
+  }
+}
