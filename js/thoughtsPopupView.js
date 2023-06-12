@@ -3,8 +3,8 @@ import Adapt from 'core/js/adapt';
 class ThoughtsPopupView extends Backbone.View {
 
   className() {
-      return 'thoughts-popup__content';
-    }
+    return 'thoughts-popup__content';
+  }
 
   events() {
     return {

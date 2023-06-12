@@ -19,6 +19,7 @@
     "_max": 255,
     "text": "Characters remaining:"
   },
+  "keywords": ["word 1", "word 2", "word 3"],
   "_buttons": {
     "_submit": {
       "buttonText": "Submit",
